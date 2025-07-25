@@ -52,6 +52,25 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// EvenTouch Brand Colors
+				brand: {
+					purple: 'hsl(var(--brand-purple))',
+					blue: 'hsl(var(--brand-blue))',
+					gradient: 'var(--brand-gradient)',
+					gradientSubtle: 'var(--brand-gradient-subtle)'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
+				info: {
+					DEFAULT: 'hsl(var(--info))',
+					foreground: 'hsl(var(--info-foreground))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -88,7 +107,45 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fadeIn 0.5s ease-out',
+				'slide-up': 'slideUp 0.6s ease-out',
+				'bounce-in': 'bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+				'glow': 'glow 2s ease-in-out infinite alternate'
+			},
+			keyframes: {
+				...{
+					'accordion-down': {
+						from: { height: '0' },
+						to: { height: 'var(--radix-accordion-content-height)' }
+					},
+					'accordion-up': {
+						from: { height: 'var(--radix-accordion-content-height)' },
+						to: { height: '0' }
+					}
+				},
+				fadeIn: {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				slideUp: {
+					'0%': { opacity: '0', transform: 'translateY(30px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				bounceIn: {
+					'0%': { opacity: '0', transform: 'scale(0.3)' },
+					'50%': { opacity: '1', transform: 'scale(1.05)' },
+					'70%': { transform: 'scale(0.9)' },
+					'100%': { opacity: '1', transform: 'scale(1)' }
+				},
+				glow: {
+					'0%': { boxShadow: '0 0 20px hsl(var(--brand-purple) / 0.3)' },
+					'100%': { boxShadow: '0 0 40px hsl(var(--brand-purple) / 0.6)' }
+				}
+			},
+			backgroundImage: {
+				'brand-gradient': 'var(--brand-gradient)',
+				'brand-gradient-subtle': 'var(--brand-gradient-subtle)'
 			}
 		}
 	},
