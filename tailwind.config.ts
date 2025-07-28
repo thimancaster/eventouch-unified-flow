@@ -144,8 +144,26 @@ export default {
 				}
 			},
 			backgroundImage: {
-				'brand-gradient': 'var(--brand-gradient)',
-				'brand-gradient-subtle': 'var(--brand-gradient-subtle)'
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-premium': 'var(--gradient-premium)',
+				'gradient-glass': 'var(--gradient-glass)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-border': 'var(--gradient-border)'
+			},
+			backdropBlur: {
+				xs: '2px',
+				sm: '4px',
+				md: '8px',
+				lg: '16px',
+				xl: '24px',
+				'2xl': '40px'
+			},
+			boxShadow: {
+				'premium': 'var(--shadow-premium)',
+				'glass': 'var(--shadow-glass)',
+				'glow': 'var(--shadow-glow)',
+				'soft': 'var(--shadow-soft)',
+				'elevation': 'var(--shadow-elevation)'
 			}
 		}
 	},

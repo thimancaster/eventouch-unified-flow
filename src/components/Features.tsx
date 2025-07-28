@@ -1,134 +1,156 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { 
   Calendar, 
-  QrCode, 
+  Users, 
   CreditCard, 
+  QrCode, 
   MessageSquare, 
-  FileText, 
-  Users,
+  FileImage,
   BarChart3,
+  Shield,
   Zap,
-  Shield
+  Globe
 } from "lucide-react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Features = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   const features = [
     {
       icon: Calendar,
       title: "Gestão Completa de Eventos",
-      description: "Crie, organize e gerencie múltiplos eventos em uma única plataforma. Controle total sobre datas, locais e categorias.",
-      color: "text-brand-purple"
+      description: "Crie, edite e gerencie eventos com facilidade total. Interface intuitiva e poderosa.",
+      color: "from-purple-500 to-purple-600",
+      delay: 0.1
     },
     {
       icon: QrCode,
-      title: "QR Code & Check-in",
-      description: "Gere QR codes únicos para cada participante e faça check-ins instantâneos via aplicativo ou webcam.",
-      color: "text-brand-blue"
+      title: "Check-in Automático",
+      description: "QR codes únicos para cada participante. Check-in instantâneo via app ou webcam.",
+      color: "from-blue-500 to-blue-600",
+      delay: 0.2
     },
     {
       icon: CreditCard,
-      title: "Pagamentos Online",
-      description: "Aceite pagamentos via Pix, boleto e cartão. Controle financeiro completo com relatórios automáticos.",
-      color: "text-success"
+      title: "Pagamentos Integrados",
+      description: "Pix, cartão, boleto. Receba automaticamente com tarifas transparentes.",
+      color: "from-green-500 to-green-600",
+      delay: 0.3
     },
     {
       icon: MessageSquare,
-      title: "WhatsApp Integrado",
-      description: "Envie confirmações, lembretes e atualizações automáticas via WhatsApp. Suporte direto aos participantes.",
-      color: "text-warning"
+      title: "WhatsApp Marketing",
+      description: "Envie confirmações, lembretes e atualizações automaticamente via WhatsApp.",
+      color: "from-emerald-500 to-emerald-600",
+      delay: 0.4
     },
     {
-      icon: FileText,
+      icon: FileImage,
       title: "Crachás Personalizados",
-      description: "Crie crachás profissionais com nome, função e QR code. Envie por email ou gere PDFs para impressão.",
-      color: "text-info"
-    },
-    {
-      icon: Users,
-      title: "Painel do Participante",
-      description: "Cada inscrito tem acesso ao próprio painel com ingresso digital, detalhes do evento e horários.",
-      color: "text-brand-purple"
+      description: "Gere crachás com QR code, nome e função. Envie por email ou imprima.",
+      color: "from-orange-500 to-orange-600",
+      delay: 0.5
     },
     {
       icon: BarChart3,
       title: "Relatórios Inteligentes",
-      description: "Acompanhe métricas em tempo real: vendas, check-ins, receitas e muito mais. Dashboard completo.",
-      color: "text-brand-blue"
-    },
-    {
-      icon: Zap,
-      title: "Modelo Freemium",
-      description: "Eventos gratuitos usam a plataforma sem custo. Pague apenas pelos recursos extras que precisar.",
-      color: "text-success"
-    },
-    {
-      icon: Shield,
-      title: "Seguro & Confiável",
-      description: "Dados protegidos, pagamentos seguros e backup automático. Sua informação sempre segura.",
-      color: "text-warning"
+      description: "Analytics completo: vendas, presença, ROI e muito mais em tempo real.",
+      color: "from-cyan-500 to-cyan-600",
+      delay: 0.6
     }
   ];
 
   return (
-    <section id="features" className="py-20 px-4 bg-muted/30">
-      <div className="container mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-brand-gradient-subtle text-primary text-sm font-medium mb-4">
-            ⚡ Funcionalidades Poderosas
+    <section className="py-24 bg-gradient-to-b from-background to-muted/20">
+      <div className="container mx-auto px-4">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 40 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 0.8 }}
+          className="text-center space-y-6 max-w-3xl mx-auto mb-20"
+        >
+          <div className="inline-flex items-center space-x-2 glass-card px-4 py-2 rounded-full">
+            <Zap className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-primary">Funcionalidades Premium</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Tudo que você precisa para
-            <span className="bg-brand-gradient bg-clip-text text-transparent"> eventos perfeitos</span>
+          
+          <h2 className="text-4xl md:text-6xl font-bold gradient-text">
+            Tudo que você precisa
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Uma plataforma completa que simplifica cada etapa do seu evento, 
-            desde o planejamento até a execução.
+          
+          <p className="text-xl text-muted-foreground leading-relaxed">
+            Plataforma completa com todas as ferramentas para criar eventos inesquecíveis.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {features.map((feature, index) => (
-            <Card 
-              key={index} 
-              className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up bg-card/50 backdrop-blur-sm"
-              style={{ animationDelay: `${index * 0.1}s` }}
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 40 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              transition={{ duration: 0.6, delay: feature.delay }}
             >
-              <CardHeader className="pb-4">
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br from-background to-muted flex items-center justify-center mb-4`}>
-                  <feature.icon className={`w-6 h-6 ${feature.color}`} />
-                </div>
-                <CardTitle className="text-lg font-semibold text-foreground">
-                  {feature.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
+              <Card className="glass-card border-0 hover-lift group h-full">
+                <CardHeader className="space-y-4">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300`}>
+                    <feature.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-bold text-foreground">
+                    {feature.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16 animate-fade-in">
-          <div className="bg-brand-gradient-subtle p-8 rounded-2xl border border-brand-purple/20">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Pronto para revolucionar seus eventos?
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-              Junte-se a centenas de organizadores que já transformaram a gestão dos seus eventos.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-brand-gradient text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
-                Começar Agora - É Grátis
-              </button>
-              <button className="border border-border px-8 py-3 rounded-lg font-medium hover:bg-muted transition-colors">
-                Agendar Demonstração
-              </button>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-center space-y-8"
+        >
+          <div className="glass-card p-12 rounded-3xl max-w-4xl mx-auto">
+            <div className="space-y-6">
+              <h3 className="text-3xl md:text-4xl font-bold text-foreground">
+                Pronto para revolucionar seus eventos?
+              </h3>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-hero hover:shadow-glow text-lg px-8 py-6 rounded-xl font-semibold"
+                >
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Começar Agora - É Grátis
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="text-lg px-8 py-6 rounded-xl font-semibold hover-lift"
+                >
+                  <Globe className="w-5 h-5 mr-2" />
+                  Agendar Demonstração
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
