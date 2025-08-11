@@ -11,9 +11,9 @@ const Hero = () => {
   });
 
   return (
-    <section className="relative min-h-screen bg-gradient-hero overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
+    <section className="relative min-h-screen bg-gradient-to-br from-primary via-brand-blue to-brand-cyan overflow-hidden">
+      {/* Contrast Overlay */}
+      <div className="absolute inset-0 bg-black/40"></div>
       
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
@@ -62,10 +62,11 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={inView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-5xl md:text-7xl font-bold leading-tight text-white"
+              className="text-5xl md:text-7xl font-bold leading-tight text-white drop-shadow-lg"
+              style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
             >
               Eventos que{" "}
-              <span className="gradient-text bg-gradient-to-r from-yellow-200 to-pink-200 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent drop-shadow-lg">
                 Vendem
               </span>
             </motion.h1>
@@ -74,7 +75,8 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={inView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-xl text-white/90 leading-relaxed max-w-lg"
+              className="text-xl text-white leading-relaxed max-w-lg drop-shadow-md"
+              style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}
             >
               A plataforma completa para transformar seus eventos em experiências inesquecíveis e lucros extraordinários.
             </motion.p>

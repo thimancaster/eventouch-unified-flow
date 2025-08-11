@@ -1,14 +1,14 @@
-import { Heart, MapPin, Mail, Phone } from "lucide-react";
+import { Heart, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-card border-t py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-brand-gradient rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-primary to-brand-blue rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">E</span>
               </div>
               <span className="text-xl font-bold text-foreground">EvenTouch</span>
@@ -35,35 +35,19 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Recursos */}
+          {/* Recursos & Social */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Recursos</h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm mb-6">
               <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Central de Ajuda</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Tutoriais</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Blog</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Cases de Sucesso</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Webinars</a></li>
             </ul>
-          </div>
-
-          {/* Contato */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Contato</h4>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-center space-x-2 text-muted-foreground">
-                <Mail className="w-4 h-4" />
-                <span>contato@eventouch.com.br</span>
-              </li>
-              <li className="flex items-center space-x-2 text-muted-foreground">
-                <Phone className="w-4 h-4" />
-                <span>(11) 9999-9999</span>
-              </li>
-            </ul>
-            <div className="mt-4">
+            <div>
               <h5 className="font-medium text-foreground mb-2">Siga-nos</h5>
               <div className="flex space-x-3">
-                <a href="#" className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center hover:bg-brand-purple hover:text-white transition-all">
+                <a href="#" className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all">
                   <span className="text-xs font-bold">f</span>
                 </a>
                 <a href="#" className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center hover:bg-brand-blue hover:text-white transition-all">
