@@ -11,19 +11,20 @@ const Hero = () => {
   });
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-primary via-brand-blue to-brand-cyan overflow-hidden">
-      {/* Contrast Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <section className="relative min-h-screen bg-hero-soft overflow-hidden">
+        {/* Contrast Overlay */}
+        <div className="absolute inset-0 hero-overlay"></div>
       
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {Array.from({ length: 50 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-white/20 rounded-full"
+            className="absolute w-1 h-1 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
+              backgroundColor: 'hsl(var(--primary) / 0.15)',
             }}
             animate={{
               y: [-20, -100],
@@ -54,8 +55,8 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center space-x-2 glass-card px-4 py-2 rounded-full"
             >
-              <Star className="w-4 h-4 text-yellow-400 fill-current" />
-              <span className="text-sm font-medium text-white">Produto #1 em Gestão de Eventos</span>
+              <Star className="w-4 h-4" style={{ color: "hsl(var(--warning))" }} />
+              <span className="text-sm font-medium text-foreground">Produto #1 em Gestão de Eventos</span>
             </motion.div>
 
             <motion.h1 
@@ -66,7 +67,7 @@ const Hero = () => {
               style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
             >
               Eventos que{" "}
-              <span className="bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent drop-shadow-lg">
+              <span className="bg-gradient-to-r from-primary to-brand-pink bg-clip-text text-transparent">
                 Vendem
               </span>
             </motion.h1>
@@ -94,8 +95,8 @@ const Hero = () => {
                 { icon: Users, text: "Ilimitados Participantes" },
               ].map((feature, index) => (
                 <div key={index} className="glass-card px-4 py-2 rounded-full flex items-center space-x-2">
-                  <feature.icon className="w-4 h-4 text-white" />
-                  <span className="text-sm font-medium text-white">{feature.text}</span>
+                  <feature.icon className="w-4 h-4 text-foreground" />
+                  <span className="text-sm font-medium text-foreground">{feature.text}</span>
                 </div>
               ))}
             </motion.div>
@@ -128,7 +129,7 @@ const Hero = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 rounded-xl font-semibold"
+                  className="border-border text-foreground hover:bg-secondary text-lg px-8 py-6 rounded-xl font-semibold"
                 >
                   <Play className="w-5 h-5 mr-2" />
                   Ver Demo (2min)
@@ -147,14 +148,14 @@ const Hero = () => {
                 {Array.from({ length: 5 }).map((_, i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 border-2 border-white"
+                    className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-brand-pink border-2 border-card"
                   />
                 ))}
               </div>
-              <div className="text-white">
-                <div className="font-semibold">+2.500 organizadores</div>
-                <div className="text-sm text-white/80">confiam no EvenTouch</div>
-              </div>
+                <div className="">
+                  <div className="font-semibold text-foreground">+2.500 organizadores</div>
+                  <div className="text-sm text-muted-foreground">confiam no EvenTouch</div>
+                </div>
             </motion.div>
           </div>
 
@@ -200,12 +201,12 @@ const Hero = () => {
                 className="absolute -top-4 -left-4 glass-card p-4 rounded-2xl shadow-glow"
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                    <Users className="w-6 h-6 text-white" />
-                  </div>
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--success))' }}>
+                      <Users className="w-6 h-6 text-primary-foreground" />
+                    </div>
                   <div>
-                    <div className="font-bold text-white">2.847</div>
-                    <div className="text-sm text-white/80">Inscritos hoje</div>
+                    <div className="font-bold text-foreground">2.847</div>
+                    <div className="text-sm text-muted-foreground">Inscritos hoje</div>
                   </div>
                 </div>
               </motion.div>
@@ -224,12 +225,12 @@ const Hero = () => {
                 className="absolute -bottom-4 -right-4 glass-card p-4 rounded-2xl shadow-glow"
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                    <QrCode className="w-6 h-6 text-white" />
-                  </div>
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--info))' }}>
+                      <QrCode className="w-6 h-6 text-primary-foreground" />
+                    </div>
                   <div>
-                    <div className="font-bold text-white">98.5%</div>
-                    <div className="text-sm text-white/80">Check-in automático</div>
+                    <div className="font-bold text-foreground">98.5%</div>
+                    <div className="text-sm text-muted-foreground">Check-in automático</div>
                   </div>
                 </div>
               </motion.div>
