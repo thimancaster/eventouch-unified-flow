@@ -9,6 +9,7 @@ const Hero = () => {
     threshold: 0.1,
     triggerOnce: true,
   });
+  const isEmbed = typeof window !== "undefined" && new URLSearchParams(window.location.search).get("embed") === "1";
 
   return (
       <section className="relative min-h-screen bg-hero-soft overflow-hidden">
@@ -48,7 +49,7 @@ const Hero = () => {
           className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]"
         >
           {/* Left Column - Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 bg-background/60 backdrop-blur-md p-6 rounded-2xl shadow-premium">
             <motion.div 
               initial={{ y: 20, opacity: 0 }}
               animate={inView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
@@ -63,8 +64,7 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={inView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-5xl md:text-7xl font-bold leading-tight text-white drop-shadow-lg"
-              style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
+              className="text-5xl md:text-7xl font-bold leading-tight text-foreground drop-shadow-lg"
             >
               Eventos que{" "}
               <span className="bg-gradient-to-r from-primary to-brand-pink bg-clip-text text-transparent">
@@ -76,8 +76,7 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={inView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-xl text-white leading-relaxed max-w-lg drop-shadow-md"
-              style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}
+              className="text-xl text-foreground leading-relaxed max-w-lg drop-shadow-md"
             >
               A plataforma completa para transformar seus eventos em experiências inesquecíveis e lucros extraordinários.
             </motion.p>
@@ -160,26 +159,85 @@ const Hero = () => {
           </div>
 
           {/* Right Column - Visual */}
-          <motion.div 
-            initial={{ y: 20, opacity: 0 }}
-            animate={inView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
-          >
-            {/* Main Device Mockup */}
-            <div className="relative">
-              <motion.div
-                animate={{
-                  y: [0, -20, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="glass-card p-8 rounded-3xl shadow-premium"
-              >
-                <img
+          {!isEmbed && (
+            <motion.div 
+              initial={{ y: 20, opacity: 0 }}
+              animate={inView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="relative"
+            >
+              {/* Main Device Mockup */}
+              <div className="relative">
+                <motion.div
+                  animate={{
+                    y: [0, -20, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="glass-card p-4 sm:p-6 md:p-8 rounded-3xl shadow-premium"
+                >
+                  <iframe
+                    src="/?embed=1"
+                    title="EvenTouch Landing Preview"
+                    className="w-full h-[280px] sm:h-[320px] md:h-[380px] lg:h-[420px] rounded-2xl border border-border bg-background"
+                    loading="lazy"
+                  />
+                </motion.div>
+
+                {/* Floating Cards */}
+                <motion.div
+                  animate={{
+                    y: [0, -15, 0],
+                    x: [0, 5, 0],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.5,
+                  }}
+                  className="absolute -top-4 -left-4 glass-card p-4 rounded-2xl shadow-glow"
+                >
+                  <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--success))' }}>
+                        <Users className="w-6 h-6 text-primary-foreground" />
+                      </div>
+                    <div>
+                      <div className="font-bold text-foreground">2.847</div>
+                      <div className="text-sm text-muted-foreground">Inscritos hoje</div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  animate={{
+                    y: [0, -10, 0],
+                    x: [0, -5, 0],
+                  }}
+                  transition={{
+                    duration: 3.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1,
+                  }}
+                  className="absolute -bottom-4 -right-4 glass-card p-4 rounded-2xl shadow-glow"
+                >
+                  <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--info))' }}>
+                        <QrCode className="w-6 h-6 text-primary-foreground" />
+                      </div>
+                    <div>
+                      <div className="font-bold text-foreground">98.5%</div>
+                      <div className="text-sm text-muted-foreground">Check-in automático</div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
                   src={heroImage}
                   alt="EvenTouch Dashboard"
                   className="w-full h-auto rounded-2xl"
