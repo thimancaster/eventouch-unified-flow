@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Play, Star, Users, Calendar, QrCode } from "lucide-react";
-import heroImage from "@/assets/hero-eventouch.jpg";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -238,62 +237,6 @@ const Hero = () => {
               </div>
             </motion.div>
           )}
-                  src={heroImage}
-                  alt="EvenTouch Dashboard"
-                  className="w-full h-auto rounded-2xl"
-                />
-              </motion.div>
-
-              {/* Floating Cards */}
-              <motion.div
-                animate={{
-                  y: [0, -15, 0],
-                  x: [0, 5, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5,
-                }}
-                className="absolute -top-4 -left-4 glass-card p-4 rounded-2xl shadow-glow"
-              >
-                <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--success))' }}>
-                      <Users className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                  <div>
-                    <div className="font-bold text-foreground">2.847</div>
-                    <div className="text-sm text-muted-foreground">Inscritos hoje</div>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                  x: [0, -5, 0],
-                }}
-                transition={{
-                  duration: 3.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
-                }}
-                className="absolute -bottom-4 -right-4 glass-card p-4 rounded-2xl shadow-glow"
-              >
-                <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--info))' }}>
-                      <QrCode className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                  <div>
-                    <div className="font-bold text-foreground">98.5%</div>
-                    <div className="text-sm text-muted-foreground">Check-in automático</div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
