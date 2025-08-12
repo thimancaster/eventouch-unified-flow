@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Play, Star, Users, Calendar, QrCode } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
+import MacbookMockup from "./MacbookMockup";
 const Hero = () => {
   const { ref, inView } = useInView({
     threshold: 0.1,
@@ -48,7 +48,7 @@ const Hero = () => {
           className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]"
         >
           {/* Left Column - Content */}
-          <div className="space-y-8 bg-background/60 backdrop-blur-md p-6 rounded-2xl shadow-premium">
+          <div className="space-y-8 bg-background/70 backdrop-blur-md p-6 rounded-2xl shadow-premium ring-1 ring-border">
             <motion.div 
               initial={{ y: 20, opacity: 0 }}
               animate={inView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
