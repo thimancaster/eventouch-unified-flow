@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, Star, Users, Calendar, QrCode } from "lucide-react";
-import heroImage from "@/assets/hero-eventouch.jpg";
+import MacBookMockup from "./MacBookMockup";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -63,11 +63,15 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={inView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-5xl md:text-7xl font-bold leading-tight text-white drop-shadow-lg"
-              style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
+              className="text-5xl md:text-7xl font-black leading-[0.9] tracking-tight"
+              style={{ 
+                color: 'white',
+                textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.6)',
+                letterSpacing: '-0.02em'
+              }}
             >
               Eventos que{" "}
-              <span className="bg-gradient-to-r from-primary to-brand-pink bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-brand-purple to-brand-pink bg-clip-text text-transparent drop-shadow-2xl">
                 Vendem
               </span>
             </motion.h1>
@@ -76,8 +80,12 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={inView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-xl text-white leading-relaxed max-w-lg drop-shadow-md"
-              style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}
+              className="text-xl font-medium leading-relaxed max-w-lg"
+              style={{ 
+                color: 'rgba(255,255,255,0.95)',
+                textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.6)',
+                lineHeight: '1.6'
+              }}
             >
               A plataforma completa para transformar seus eventos em experiências inesquecíveis e lucros extraordinários.
             </motion.p>
@@ -109,27 +117,27 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4"
             >
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 <Button 
                   size="lg" 
-                  className="bg-white text-primary hover:bg-white/90 shadow-premium text-lg px-8 py-6 rounded-xl font-semibold hover-lift"
+                  className="bg-white text-primary hover:bg-white/95 hover:shadow-glow text-lg px-10 py-7 rounded-2xl font-bold transition-all duration-300 shadow-premium border border-white/20"
                 >
                   Criar Primeiro Evento 🚀
                 </Button>
               </motion.div>
               
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="border-border text-foreground hover:bg-secondary text-lg px-8 py-6 rounded-xl font-semibold"
+                  className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-md text-lg px-10 py-7 rounded-2xl font-bold transition-all duration-300 hover:border-white/50"
                 >
                   <Play className="w-5 h-5 mr-2" />
                   Ver Demo (2min)
@@ -159,82 +167,114 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Right Column - Visual */}
+          {/* Right Column - MacBook Mockup */}
           <motion.div 
             initial={{ y: 20, opacity: 0 }}
             animate={inView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
+            className="relative flex justify-center"
           >
-            {/* Main Device Mockup */}
-            <div className="relative">
-              <motion.div
-                animate={{
-                  y: [0, -20, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="glass-card p-8 rounded-3xl shadow-premium"
-              >
-                <img
-                  src={heroImage}
-                  alt="EvenTouch Dashboard"
-                  className="w-full h-auto rounded-2xl"
-                />
-              </motion.div>
-
-              {/* Floating Cards */}
-              <motion.div
-                animate={{
-                  y: [0, -15, 0],
-                  x: [0, 5, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5,
-                }}
-                className="absolute -top-4 -left-4 glass-card p-4 rounded-2xl shadow-glow"
-              >
-                <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--success))' }}>
-                      <Users className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                  <div>
-                    <div className="font-bold text-foreground">2.847</div>
-                    <div className="text-sm text-muted-foreground">Inscritos hoje</div>
+            <MacBookMockup className="max-w-lg">
+              {/* Mini Landing Page Preview */}
+              <div className="bg-gradient-to-b from-background to-muted/20 h-full overflow-hidden">
+                {/* Mini Header */}
+                <div className="flex items-center justify-between px-4 py-2 bg-background/80 backdrop-blur-md border-b border-white/10">
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 bg-gradient-hero rounded-full"></div>
+                    <span className="text-[8px] font-bold text-white">EvenTouch</span>
+                  </div>
+                  <div className="flex space-x-1">
+                    <div className="w-6 h-2 bg-primary/80 rounded text-[6px] text-white flex items-center justify-center font-bold">Grátis</div>
                   </div>
                 </div>
-              </motion.div>
-
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                  x: [0, -5, 0],
-                }}
-                transition={{
-                  duration: 3.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
-                }}
-                className="absolute -bottom-4 -right-4 glass-card p-4 rounded-2xl shadow-glow"
-              >
-                <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--info))' }}>
-                      <QrCode className="w-6 h-6 text-primary-foreground" />
+                
+                {/* Mini Hero Content */}
+                <div className="px-4 py-6 space-y-3">
+                  <div className="inline-flex items-center space-x-1 bg-white/10 px-2 py-1 rounded-full">
+                    <Star className="w-2 h-2 text-yellow-400" />
+                    <span className="text-[6px] font-medium text-white">#1 em Eventos</span>
+                  </div>
+                  
+                  <h1 className="text-[12px] font-black leading-tight text-white">
+                    Eventos que <span className="bg-gradient-to-r from-primary to-brand-pink bg-clip-text text-transparent">Vendem</span>
+                  </h1>
+                  
+                  <p className="text-[7px] text-white/80 leading-relaxed">
+                    Plataforma completa para eventos inesquecíveis
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-1">
+                    <div className="bg-white/10 px-2 py-0.5 rounded-full flex items-center space-x-1">
+                      <Calendar className="w-1.5 h-1.5 text-white" />
+                      <span className="text-[6px] font-medium text-white">Setup 5min</span>
                     </div>
-                  <div>
-                    <div className="font-bold text-foreground">98.5%</div>
-                    <div className="text-sm text-muted-foreground">Check-in automático</div>
+                    <div className="bg-white/10 px-2 py-0.5 rounded-full flex items-center space-x-1">
+                      <QrCode className="w-1.5 h-1.5 text-white" />
+                      <span className="text-[6px] font-medium text-white">Check-in Auto</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex space-x-2">
+                    <div className="bg-white text-primary px-3 py-1 rounded-lg text-[7px] font-bold">
+                      Criar Evento 🚀
+                    </div>
+                    <div className="border border-white/30 text-white px-3 py-1 rounded-lg text-[7px] font-bold flex items-center space-x-1">
+                      <Play className="w-1.5 h-1.5" />
+                      <span>Demo</span>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            </MacBookMockup>
+
+            {/* Floating Stats Cards */}
+            <motion.div
+              animate={{
+                y: [0, -15, 0],
+                x: [0, 5, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5,
+              }}
+              className="absolute top-8 -left-8 glass-card p-3 rounded-xl shadow-glow"
+            >
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--success))' }}>
+                  <Users className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <div className="font-bold text-foreground text-sm">2.847</div>
+                  <div className="text-xs text-muted-foreground">Inscritos hoje</div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+                x: [0, -5, 0],
+              }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
+              className="absolute bottom-8 -right-8 glass-card p-3 rounded-xl shadow-glow"
+            >
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--info))' }}>
+                  <QrCode className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <div className="font-bold text-foreground text-sm">98.5%</div>
+                  <div className="text-xs text-muted-foreground">Check-in automático</div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

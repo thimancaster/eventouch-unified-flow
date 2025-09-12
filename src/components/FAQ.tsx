@@ -27,10 +27,14 @@ const FAQ = () => {
   return (
     <section id="faq" className="py-20 bg-background">
       <div className="container">
-        <header className="mb-10 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Dúvidas <span className="gradient-text">frequentes</span></h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">Encontre respostas para as perguntas mais comuns</p>
-        </header>
+      <header className="mb-12 text-center">
+        <h2 className="text-4xl md:text-6xl font-black gradient-text leading-tight tracking-tight mb-4">
+          Dúvidas <span className="text-foreground">frequentes</span>
+        </h2>
+        <p className="text-xl font-medium text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          Encontre respostas para as perguntas mais comuns sobre nossa plataforma
+        </p>
+      </header>
 
         <Accordion type="single" collapsible className="mx-auto max-w-3xl">
           {faqs.map((item, i) => (
