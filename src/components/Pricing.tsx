@@ -22,7 +22,7 @@ const plans = [
   },
   {
     name: "Premium",
-    price: "R$ 97",
+    price: "R$ 9",
     commission: "5% por venda",
     description: "Para eventos profissionais e organizadores sérios",
     features: [
@@ -42,7 +42,7 @@ const plans = [
   },
   {
     name: "Anual",
-    price: "R$ 9",
+    price: "R$ 87",
     commission: "5% por venda",
     description: "Economia máxima com pagamento anual",
     features: [
@@ -118,11 +118,11 @@ const Pricing = () => {
                   </div>
                   
                   <div className="space-y-2">
-                     <div className="text-5xl font-black text-foreground">
-                       {plan.price}
-                       {plan.name === "Premium" && <span className="text-xl font-medium text-muted-foreground">/mês</span>}
-                       {plan.name === "Anual" && <span className="text-xl font-medium text-muted-foreground">/mês</span>}
-                     </div>
+                      <div className="text-5xl font-black text-foreground">
+                        {plan.price}
+                        {plan.name === "Premium" && <span className="text-xl font-medium text-muted-foreground">/mês</span>}
+                        {plan.name === "Anual" && <span className="text-xl font-medium text-muted-foreground">/ano</span>}
+                      </div>
                     {plan.commission && (
                       <p className="text-sm text-muted-foreground">+ {plan.commission}</p>
                     )}

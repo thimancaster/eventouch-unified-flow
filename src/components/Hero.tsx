@@ -72,13 +72,33 @@ const Hero = () => {
             >
               Eventos que{" "}
               <span 
-                className="bg-gradient-to-r from-primary via-brand-purple to-brand-pink bg-clip-text text-transparent font-black"
+                className="relative inline-block"
                 style={{
-                  filter: 'drop-shadow(0 4px 20px rgba(139, 92, 246, 0.6)) drop-shadow(0 2px 8px rgba(139, 92, 246, 0.8))',
-                  WebkitTextStroke: '1px rgba(139, 92, 246, 0.3)'
+                  background: 'linear-gradient(135deg, hsl(var(--brand-purple)), hsl(var(--brand-pink)))',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  fontWeight: '900',
+                  textShadow: '0 0 40px rgba(139, 92, 246, 0.8), 0 0 80px rgba(139, 92, 246, 0.4)',
+                  filter: 'drop-shadow(0 4px 12px rgba(139, 92, 246, 0.9)) drop-shadow(0 2px 6px rgba(139, 92, 246, 0.7))',
+                  WebkitTextStroke: '2px rgba(139, 92, 246, 0.8)'
                 }}
               >
                 Vendem
+                <div 
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background: 'linear-gradient(135deg, hsl(var(--brand-purple)), hsl(var(--brand-pink)))',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'blur(8px)',
+                    opacity: 0.6,
+                    zIndex: -1
+                  }}
+                >
+                  Vendem
+                </div>
               </span>
             </motion.h1>
 
