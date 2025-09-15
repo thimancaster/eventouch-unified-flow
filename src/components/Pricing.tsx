@@ -41,21 +41,21 @@ const plans = [
     popular: true,
   },
   {
-    name: "Enterprise",
-    price: "Personalizado",
-    commission: "Negociável",
-    description: "Soluções personalizadas para grandes organizações",
+    name: "Anual",
+    price: "R$ 9",
+    commission: "5% por venda",
+    description: "Economia máxima com pagamento anual",
     features: [
       "Tudo do Premium",
-      "Marca branca (White Label)",
-      "Integrações personalizadas",
-      "Gerente de conta dedicado",
-      "Treinamento personalizado",
-      "SLA garantido",
-      "Múltiplos usuários",
-      "Auditoria de segurança"
+      "Desconto de 25% (12 meses)",
+      "Suporte prioritário premium",
+      "Relatórios anuais detalhados",
+      "Backup automático mensal",
+      "Integração com contador",
+      "Certificado SSL premium",
+      "Domínio personalizado incluído"
     ],
-    cta: "Falar com Vendas",
+    cta: "Começar Plano Anual",
     popular: false,
   },
 ];
@@ -118,10 +118,11 @@ const Pricing = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <div className="text-5xl font-black text-foreground">
-                      {plan.price}
-                      {plan.price !== "Grátis" && plan.price !== "Personalizado" && <span className="text-xl font-medium text-muted-foreground">/mês</span>}
-                    </div>
+                     <div className="text-5xl font-black text-foreground">
+                       {plan.price}
+                       {plan.name === "Premium" && <span className="text-xl font-medium text-muted-foreground">/mês</span>}
+                       {plan.name === "Anual" && <span className="text-xl font-medium text-muted-foreground">/mês</span>}
+                     </div>
                     {plan.commission && (
                       <p className="text-sm text-muted-foreground">+ {plan.commission}</p>
                     )}

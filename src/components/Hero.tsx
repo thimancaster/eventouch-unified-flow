@@ -71,7 +71,13 @@ const Hero = () => {
               }}
             >
               Eventos que{" "}
-              <span className="bg-gradient-to-r from-primary via-brand-purple to-brand-pink bg-clip-text text-transparent drop-shadow-2xl">
+              <span 
+                className="bg-gradient-to-r from-primary via-brand-purple to-brand-pink bg-clip-text text-transparent font-black"
+                style={{
+                  filter: 'drop-shadow(0 4px 20px rgba(139, 92, 246, 0.6)) drop-shadow(0 2px 8px rgba(139, 92, 246, 0.8))',
+                  WebkitTextStroke: '1px rgba(139, 92, 246, 0.3)'
+                }}
+              >
                 Vendem
               </span>
             </motion.h1>
