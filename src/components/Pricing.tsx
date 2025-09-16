@@ -57,6 +57,7 @@ const plans = [
     ],
     cta: "Começar Plano Anual",
     popular: false,
+    savings: true,
   },
 ];
 
@@ -107,6 +108,14 @@ const Pricing = () => {
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <div className="bg-gradient-hero text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
                       Mais Popular
+                    </div>
+                  </div>
+                )}
+                
+                {plan.savings && (
+                  <div className="absolute -top-4 right-4">
+                    <div className="bg-success text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg animate-pulse">
+                      Economize 25%!
                     </div>
                   </div>
                 )}
