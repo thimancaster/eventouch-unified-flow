@@ -72,11 +72,15 @@ const Hero = () => {
             >
               Eventos que{" "}
               <span 
-                className="relative inline-block gradient-text"
+                className="relative inline-block"
                 style={{
+                  background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
                   textShadow: '0 0 40px hsla(var(--primary)/0.8), 0 0 80px hsla(var(--primary)/0.4)',
-                  filter: 'drop-shadow(0 4px 12px hsla(var(--primary)/0.9)) drop-shadow(0 2px 6px hsla(var(--primary)/0.7))',
-                  WebkitTextStroke: '1px hsla(var(--primary)/0.5)',
+                  filter: 'drop-shadow(0 0 20px hsla(var(--primary)/0.8)) drop-shadow(0 4px 12px hsla(var(--primary)/0.6))',
+                  WebkitTextStroke: '1px hsla(var(--primary)/0.3)',
                   fontWeight: '900'
                 }}
               >
@@ -189,54 +193,58 @@ const Hero = () => {
                 <div className="absolute inset-0 hero-overlay"></div>
                 
                 {/* Mini Header */}
-                <div className="relative flex items-center justify-between px-3 py-1.5 bg-background/90 backdrop-blur-md border-b border-white/10">
-                  <div className="flex items-center space-x-1">
-                    <div className="w-1.5 h-1.5 bg-gradient-hero rounded-full"></div>
-                    <span className="text-[7px] font-bold text-white">EvenTouch</span>
+                <div className="relative flex items-center justify-between px-4 py-2 bg-background/95 backdrop-blur-md border-b border-white/10">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-gradient-hero rounded-full"></div>
+                    <span className="text-[8px] font-bold text-white">EvenTouch</span>
                   </div>
                   <div className="flex space-x-1">
-                    <div className="px-1.5 py-0.5 bg-primary/80 rounded text-[5px] text-white font-bold">Grátis</div>
+                    <div className="px-2 py-1 bg-primary/80 rounded text-[6px] text-white font-bold">Grátis</div>
                   </div>
                 </div>
                 
                 {/* Mini Hero Content */}
-                <div className="relative px-3 py-4 space-y-2">
-                  <div className="inline-flex items-center space-x-1 glass-card px-1.5 py-0.5 rounded-full">
-                    <Star className="w-1.5 h-1.5 text-warning" />
-                    <span className="text-[5px] font-medium text-white">#1 em Eventos</span>
+                <div className="relative px-4 py-6 space-y-3">
+                  <div className="inline-flex items-center space-x-1 glass-card px-2 py-1 rounded-full">
+                    <Star className="w-2 h-2 text-warning" />
+                    <span className="text-[6px] font-medium text-white">#1 em Eventos</span>
                   </div>
                   
-                  <h1 className="text-[10px] font-black leading-tight text-white">
+                  <h1 className="text-[12px] font-black leading-tight text-white">
                     Eventos que{" "}
-                    <span className="gradient-text" style={{
-                      textShadow: '0 0 20px hsla(var(--primary)/0.8)',
-                      WebkitTextStroke: '0.5px hsla(var(--primary)/0.3)'
-                    }}>
+                    <span 
+                      className="gradient-text" 
+                      style={{
+                        textShadow: '0 0 20px hsla(var(--primary)/0.9)',
+                        filter: 'drop-shadow(0 0 10px hsla(var(--primary)/0.8))',
+                        WebkitTextStroke: '0.5px hsla(var(--primary)/0.4)'
+                      }}
+                    >
                       Vendem
                     </span>
                   </h1>
                   
-                  <p className="text-[6px] text-white/90 leading-relaxed">
+                  <p className="text-[7px] text-white/90 leading-relaxed">
                     Plataforma completa para eventos inesquecíveis
                   </p>
                   
-                  <div className="flex flex-wrap gap-0.5">
-                    <div className="glass-card px-1.5 py-0.5 rounded-full flex items-center space-x-0.5">
-                      <Calendar className="w-1 h-1 text-white" />
-                      <span className="text-[5px] font-medium text-white">Setup 5min</span>
+                  <div className="flex flex-wrap gap-1">
+                    <div className="glass-card px-2 py-1 rounded-full flex items-center space-x-1">
+                      <Calendar className="w-1.5 h-1.5 text-white" />
+                      <span className="text-[6px] font-medium text-white">Setup 5min</span>
                     </div>
-                    <div className="glass-card px-1.5 py-0.5 rounded-full flex items-center space-x-0.5">
-                      <QrCode className="w-1 h-1 text-white" />
-                      <span className="text-[5px] font-medium text-white">Check-in Auto</span>
+                    <div className="glass-card px-2 py-1 rounded-full flex items-center space-x-1">
+                      <QrCode className="w-1.5 h-1.5 text-white" />
+                      <span className="text-[6px] font-medium text-white">Check-in Auto</span>
                     </div>
                   </div>
                   
-                  <div className="flex space-x-1.5 pt-1">
-                    <div className="bg-white text-primary px-2 py-0.5 rounded-lg text-[6px] font-bold">
+                  <div className="flex space-x-2 pt-2">
+                    <div className="bg-white text-primary px-3 py-1 rounded-lg text-[7px] font-bold">
                       Criar Evento 🚀
                     </div>
-                    <div className="border border-white/30 text-white px-2 py-0.5 rounded-lg text-[6px] font-bold flex items-center space-x-0.5">
-                      <Play className="w-1 h-1" />
+                    <div className="border border-white/30 text-white px-3 py-1 rounded-lg text-[7px] font-bold flex items-center space-x-1">
+                      <Play className="w-1.5 h-1.5" />
                       <span>Demo</span>
                     </div>
                   </div>

@@ -6,18 +6,18 @@ import { useInView } from "react-intersection-observer";
 const trustCards = [
   {
     icon: ShieldCheck,
-    title: "Segurança Total",
-    description: "Criptografia de ponta e proteção completa de dados pessoais dos seus participantes.",
+    title: "Segurança de Ponta",
+    description: "Criptografia de ponta e proteção completa de dados pessoais dos seus participantes com conformidade total às leis de proteção de dados.",
   },
   {
     icon: Server,
-    title: "Plataforma Confiável",
-    description: "Infraestrutura robusta na nuvem com 99.9% de uptime garantido para seus eventos.",
+    title: "Plataforma Robusta",
+    description: "Infraestrutura escalável na nuvem com 99.9% de uptime garantido, suportando milhares de eventos simultâneos.",
   },
   {
     icon: Heart,
     title: "Suporte que Encanta",
-    description: "Atendimento humanizado 24/7 e onboarding completo para seu sucesso garantido.",
+    description: "Atendimento humanizado 24/7 e onboarding completo para seu sucesso garantido, com equipe especializada disponível a qualquer momento.",
   },
 ];
 
@@ -38,7 +38,7 @@ const Partners = () => {
           className="mb-16 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Criado para sua <span className="gradient-text">Segurança e Sucesso</span>
+            Criado para a sua <span className="gradient-text">Segurança e Sucesso</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
             Tecnologia de ponta, segurança premium e suporte excepcional para garantir o sucesso dos seus eventos

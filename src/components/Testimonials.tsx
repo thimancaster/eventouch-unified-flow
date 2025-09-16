@@ -113,7 +113,7 @@ const Testimonials = () => {
               className="bg-gradient-hero hover:shadow-glow text-white text-lg px-10 py-7 rounded-2xl font-bold transition-all duration-300 border border-white/20 group"
             >
               <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Veja mais histórias de sucesso
+              Veja mais Histórias de Sucesso
             </Button>
           </motion.div>
         </motion.div>
